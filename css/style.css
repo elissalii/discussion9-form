@@ -1,0 +1,114 @@
+  /* Create an accessible color palette using var()function */
+  /* https://www.w3schools.com/css/css3_variables.asp */
+  :root {
+    --background: #B9DBA7;
+    --font: #18275f;
+    --black: #000000;
+    --green: #4CAF50;
+    --border: #ffffff;
+  }
+
+  body{
+    font-family: "roc-grotesk", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+
+  form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    width:70%;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--font);
+    background: var(--background);
+  }
+
+  .radio {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    /* background: #575294; */
+    color: var(--font);
+  }
+
+  #name {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background: var(--background);
+    color: var(--black);
+  }
+
+  #message {
+    width: 100%;
+    padding: 10px;
+    resize: vertical;
+  }
+
+  input,
+  textarea {
+    padding: 10px;
+    border: 3px solid var(--border);
+    width: 100%;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--font);
+    color: var(--background);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: var(--green);
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  h1{
+    grid-column: 1/-1;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+
+  .visually-hidden:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    z-index: 10000; 
+    outline: none; 
+    background-color: #fff; 
+    color: #000; 
+    font-size: 1em; 
+    padding: 10px; 
+    border: 2px solid #000; 
+    top: 0; 
+    left: 0; 
+}
+
+.radio {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+  gap: 20px;
+}
